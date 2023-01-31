@@ -1,0 +1,50 @@
+<div>
+    <div class="container">
+        <p class="fs-4 text-primary text-center p-3 alert alert-warning">CHAT
+            <span>
+                <a class="btn btn-primary ms-5" href="/">HOME</a>
+                {{#if email}}
+                <a class="btn btn-success ms-5" href="/chat/{{email}}">Mis Mensajes</a>
+                {{/if}}
+            </span>
+        </p>
+    </div>
+    <div class="container" id="messages"></div>
+</div>
+
+{{#if admin}}
+<form id="enviarMensajeAdmin">
+    <h2 class="text-center mt-3 text-primary">Respuestas <span class="text-secondary"></span></h2>
+    <div class="container col-6">
+        <input type="hidden" class="form-control" name="email" value="{{email}}">
+        <p><u class="text-capitalize">{{type}}:</u><span class="fw-bold ps-2">{{email}}</span></p>
+        <input type="hidden" class="form-control" name="type" value="{{type}}">
+
+        <label for="userEmail" class="fw-bold">Email a responder</label>
+        <input type="email" name="queryEmail" class="form-control" required>
+        <label for="userDate" class="fw-bold">Fecha consulta</label>
+        <input type="date" name="queryDate" class="form-control" required>
+
+        <label for="text">Mensaje</label>
+        <textarea class="form-control" name="text" rows="5" id="text"></textarea>
+        <button type="submit" class="btn btn-primary m-2">Enviar</button>
+    </div>
+</form>
+
+
+{{else}}
+<form id="enviarMensaje">
+    <h2 class="text-center mt-3 text-primary">Preguntas <span class="text-secondary"></span></h2>
+    <div class="container col-6">
+        <input type="hidden" class="form-control" name="email" value="{{email}}">
+        <p><u class="text-capitalize">{{type}}:</u><span class="fw-bold ps-2">{{email}}</span></p>
+        <input type="hidden" class="form-control" name="type" value="{{type}}">
+        <label for="message">Mensaje</label>
+        <textarea class="form-control" name="text" rows="3" id="text"></textarea>
+        <button type="submit" class="btn btn-primary m-2">Enviar</button>
+    </div>
+</form>
+{{/if}}
+
+
+<script defer src="../js/chat.js"></script>

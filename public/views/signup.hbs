@@ -1,0 +1,43 @@
+<title>{{title}}</title>
+
+
+<div class="container mt-3 bg-light border border-3 p-3">
+    <div>
+        <h2 class="text-primary"><span class="fst-italic fw-bold border-bottom border-primary">Registro</span> de
+            Usuario</h2>
+        <br>
+        <form action="/signup" method="post" enctype="multipart/form-data" id="formLogin" autocomplete="off">
+            <div class="form-group">
+                <label for="email" class="fs-5 fw-semibold fst-italic">Ingrese su email</label>
+                <input id="email" class="form-control" type="email" name="email" required>
+                <label for="password" class="fs-5 fw-semibold fst-italic mt-4">Ingrese su contraseña</label>
+                <input id="password" class="form-control" type="password" name="password" required>
+
+                <label for="repeatPassword" class="fs-5 fw-semibold fst-italic mt-4">Repetir su contraseña</label>
+                <input id="repeatPassword" class="form-control" type="password" name="repeatPassword" required>
+
+                <label for="nombre" class="fs-5 fw-semibold fst-italic">Nombre completo</label>
+                <input id="nombre" class="form-control" type="text" name="nombre" required>
+
+                <label for="age" class="fs-5 fw-semibold fst-italic">Edad</label>
+                <input id="age" class="form-control" type="number" name="age" required>
+
+                <label for="adress" class="fs-5 fw-semibold fst-italic">Dirección</label>
+                <input id="adress" class="form-control" type="text" name="adress" required>
+
+                <label for="phone" class="fs-5 fw-semibold fst-italic">Telefono</label>
+                <input id="phone" class="form-control" type="text" name="phone" required>
+
+
+                <label for="thumbnail" class="fs-5 fw-semibold fst-italic">Imagen de perfil <span
+                        class="text-secondary fs-6"> (No requerido)</span></label>
+                <input type="file" name="thumbnail" class="form-control" accept="img/*">
+
+            </div>
+            <button class="btn btn-success mt-3" id="btnLogin" type="submit">Enviar</button>
+        </form>
+        <hr>
+        <button class="btn btn-outline-warning border border-3 border-warning"
+            onclick="window.location='/login';">Login</button>
+    </div>
+</div>

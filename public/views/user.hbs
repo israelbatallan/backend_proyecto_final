@@ -1,0 +1,40 @@
+<title>{{title}}</title>
+
+<section class="clearfix">
+    <div class="d-flex border border-1 flex-row justify-content-between align-items-center m-0 p-0">
+        <h2 class="text-primary fw-semibold fs-3">Bienvenido
+            <div class="d-flex">
+                {{#if userData }}
+                <div class="text-success fs-5">{{ userData.nombre }}</div>
+                <img src={{userAvatar}} class="rounded-pill" width="100px">
+            </div>
+        </h2>
+        <div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>{{>cartWidget}}</div>
+                <div><a href="/user/carrito" class="btn btn-primary">Ver productos</a></div>
+            </div>
+
+        </div>
+        <div class="p-3">
+            <a class="btn btn-primary float-start m-2" href="/productos">HOME</a>
+            <a class="btn btn-outline-danger float-end m-2" href="/logout">Logout</a>
+        </div>
+    </div>
+
+    {{/if}}
+</section>
+
+{{#if userData }}
+<div class="container border border-1 border-primary text-center mt-5">
+    <p>Nombre: <span class="text-primary">{{userData.nombre}}</span></p>
+    <p>Email: <span class="text-primary">{{userData.email}}</span></p>
+    <p>Telefono: <span class="text-primary">{{userData.phone}}</span></p>
+    <p>Dirección: <span class="text-primary">{{userData.adress}}</span></p>
+    <p>Edad: <span class="text-primary">{{userData.age}}</span></p>
+    {{#if userData.admin}}
+    <p class="fs-4 bg-light">Admin: <span class="text-danger">{{userData.admin}}</span></p>
+    {{/if}}
+    <p>Avatar: <br> <img src={{userAvatar}} class="rounded-pill" width="100"></d>
+</div>
+{{/if }}

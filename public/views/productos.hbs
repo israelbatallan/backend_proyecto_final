@@ -1,0 +1,50 @@
+<h2 class="text-center mt-3 mb-3 text-primary">Lista de Productos</span></h2>
+{{#if productos }}
+<section class="container">
+    <div class="container text-center bg-dark bg-gradient p-2">
+        <a class="btn btn-outline-primary" href="/">Home</a>
+        <a class="btn btn-outline-warning ms-3" href="/user/carrito">Carrito</a>
+    </div>
+    <table class="table border-dark table-light table-striped">
+        <thead>
+            <tr class="table-primary fs-5">
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Foto</th>
+                <th scope="col">Detalles</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Categoría</th>
+                <th>Comprar</th>
+            </tr>
+        </thead>
+        <tbody class="align-middle">
+            {{#each productos}}
+            <tr>
+                <td>{{ this.nombre }}</td>
+                <td>${{ this.precio }}</td>
+                <td><img src="{{this.foto}}" width="100"></td>
+                <td>{{ this.descripcion }}</td>
+                <td>{{this.stock}}</td>
+                <td class="text-success fw-bold"><a class="btn btn-outline-success"
+                        href="/productos/{{this.categoria}}"><span class="text-uppercase">{{this.categoria}}</span></a>
+                </td>
+                <td>
+                    <div class="d-flex">
+                        <div class="btnComprar pe-2"><span class="spinner-border spinner-border-sm text-primary"></span>
+                        </div>
+                        <div class="btnEliminar pe-2"><span class="spinner-border spinner-border-sm text-danger"></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            {{/each}}
+    </table>
+</section>
+{{else}}
+<div class="container">
+    <h3 class="border border-3 border-danger text-secondary text-center p-2">No hay productos</h3>
+</div>
+{{/if }}
+
+<script defer src="../js/prod-cards-actions.js"></script>

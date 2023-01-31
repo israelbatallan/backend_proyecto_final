@@ -1,0 +1,24 @@
+<title>{{title}}</title>
+
+{{#if options}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="text-primary fs-5">Escuchando en Puerto : <span class="text-dark">{{options.PORT}}</span></p>
+            <p class="text-primary fs-5">Timepo de expiracion del token : <span
+                    class="text-dark">{{options.tokenExpiringTime}}</span></p>
+            <p class="text-primary fs-5">Email del sitio/notificaciones : <span
+                    class="text-dark">{{options.emailSite}}</span></p>
+            <p class="text-primary fs-5">Tipo de persistnecia elegida : <span
+                    class="text-dark">{{options.persistence}}</span></p>
+        </div>
+    </div>
+    {{else}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center mt-3 mb-3 text-primary">"No hay informacion del proyecto"</h2>
+            </div>
+        </div>
+    </div>
+    {{/if}}

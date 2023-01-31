@@ -1,0 +1,27 @@
+{{#if messages}}
+<div class="container border">
+    <h3 class="fs-4 text-primary text-center alert alert-warning">Mis mensajes</h3>
+    {{#each messages}}
+    <article class="border-bottom">
+        {{#each this}}
+        <span class="text-primary fs-5 fw-bold">{{email}}</span>
+        <span class="text-muted fs-6 fw-bold">{{type}}</span>
+        <span class="text-brown fw-semibold">{{date}}</span>
+        <span class="text-success fst-italic">{{text}}</span>
+        {{/each}}
+    </article>
+    {{/each}}
+</div>
+
+{{else}}
+<div class="container">
+    <h3 class="border border-3 border-danger text-secondary text-center p-2">No hay Mensajes</h3>
+</div>
+{{/if}}
+
+<div>
+    <div class="container text-center bg-light p-2 mt-3">
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-success ms-3" href="/chat">Chat</a>
+    </div>
+</div>
